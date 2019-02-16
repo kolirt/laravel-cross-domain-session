@@ -14,7 +14,7 @@ class CrossDomainSession
 
     protected function get($key = null, $default = null)
     {
-        $session = session()->get('cross-domain-session', []);
+        $session = session()->get(config('cross-domain-session.key', 'cross-domain-session'), []);
 
         if (!$key)
             return $session;
@@ -32,7 +32,7 @@ class CrossDomainSession
             $session[$key] = $value;
         }
 
-        session()->put('cross-domain-session', $session);
+        session()->put(config('cross-domain-session.key', 'cross-domain-session'), $session);
         session()->save();
     }
 
@@ -46,7 +46,7 @@ class CrossDomainSession
             $session[$key] = $value;
         }
 
-        session()->put('cross-domain-session', $session);
+        session()->put(config('cross-domain-session.key', 'cross-domain-session'), $session);
         session()->save();
     }
 

@@ -2,9 +2,9 @@
 
 namespace Kolirt\CrossDomainSession;
 
-use Illuminate\Support\ServiceProvider as BaseSerbiceProvider;
+use Illuminate\Support\ServiceProvider;
 
-class CrossDomainSessionServiceProvider extends BaseSerbiceProvider
+class CrossDomainSessionServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.
@@ -18,15 +18,11 @@ class CrossDomainSessionServiceProvider extends BaseSerbiceProvider
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'cross-domain-session');
 
         view()->composer('cross-domain-session::render', function($view){
-            $view->with('domains', function(){
-                return cd_session()->domains->filter(function($q){
-                    return request()->root() != $q;
-                });
-            });
+            $view->with('domains', cd_session()->domains->filter(function($q){
+                return request()->root() != $q;
+            }));
 
-            $view->with('params', function(){
-                return cd_session()->request();
-            });
+            $view->with('params', cd_session()->request());
         });
 
         $this->publishes([
