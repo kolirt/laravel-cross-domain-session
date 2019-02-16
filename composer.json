@@ -1,0 +1,29 @@
+{
+  "name": "kolirt/laravel-cross-domain-session",
+  "description": "desciprtion",
+  "keywords": [
+    "laravel",
+    "cross domain session",
+    "session",
+    "cross domain"
+  ],
+  "license": "MIT",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Asan Abdurakhmanov",
+      "email": "asan11@outlook.com"
+    }
+  ],
+  "require": {
+    "intervention/image": "^2.4"
+  },
+  "autoload": {
+    "files": [
+      "src/helpers.php"
+    ],
+    "psr-4": {
+      "Kolirt\\CrossDomainSession\\": "src"
+    }
+  }
+}
