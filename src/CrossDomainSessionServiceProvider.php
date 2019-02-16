@@ -4,7 +4,7 @@ namespace Kolirt\CrossDomainSession;
 
 use Illuminate\Support\ServiceProvider as BaseSerbiceProvider;
 
-class ServiceProvider extends BaseSerbiceProvider
+class CrossDomainSessionServiceProvider extends BaseSerbiceProvider
 {
     /**
      * Bootstrap any application services.

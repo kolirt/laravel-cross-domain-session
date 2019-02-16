@@ -1,6 +1,6 @@
 {
   "name": "kolirt/laravel-cross-domain-session",
-  "description": "desciprtion",
+  "description": "The package will help to synchronize data between different domains.",
   "keywords": [
     "laravel",
     "cross domain session",
@@ -8,7 +8,7 @@
     "cross domain"
   ],
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": [
     {
       "name": "Asan Abdurakhmanov",
