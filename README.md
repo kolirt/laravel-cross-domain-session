@@ -1,4 +1,4 @@
-# Laravel Cross-Domain Session v1.0.6
+# Laravel Cross-Domain Session v1.0.7
 
 The package will help to synchronize data between different domains.  
 ***It's not safe. Do not sync confidential information!***

@@ -52,7 +52,7 @@ class CrossDomainSession
 
     protected function isValideDomain($domain)
     {
-        $referer = preg_replace('#\/$#', '', $domain);
+        $referer = preg_replace('#^(http?s:\/\/[a-zA-Z0-9-\.]+).*$#', '$1', $domain);
         return $this->domains->search($referer) !== false;
     }
 
