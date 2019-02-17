@@ -1,15 +1,21 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: lopol
- * Date: 17.02.2019
- * Time: 8:56
- */
 
 namespace Kolirt\CrossDomainSession\app\Http\Controllers;
 
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
-class CrossDomainSessionController
+class CrossDomainSessionController extends Controller
 {
+
+    public function index(Request $request)
+    {
+        if (cd_session()->isValideDomain($request->server('HTTP_REFERER'))) {
+            $q = cd_session()->decode($request->get('q'));
+            cd_session()->set($q);
+        }
+
+        return Image::canvas(1, 1)->response('jpg');
+    }
 
 }

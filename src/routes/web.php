@@ -1,10 +1,3 @@
 <?php
 
-Route::get('sync_session', function(Illuminate\Http\Request $request){
-    if (cd_session()->isValideDomain($request->server('HTTP_REFERER'))) {
-        $q = cd_session()->decode($request->get('q'));
-        cd_session()->set($q);
-    }
-
-    return Image::canvas(1, 1)->response('jpg');
-});
+Route::middleware('web')->get('sync_session', 'Kolirt\\CrossDomainSession\\app\\Http\\Controllers\\CrossDomainSessionController@index');
