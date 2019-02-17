@@ -1,4 +1,4 @@
-# Laravel Cross-Domain Session v1.0.5
+# Laravel Cross-Domain Session v1.0.6
 
 The package will help to synchronize data between different domains.
 
@@ -12,7 +12,7 @@ $ composer require kolirt/laravel-cross-domain-session
 $ php artisan vendor:publish --provider="Kolirt\CrossDomainSession\CrossDomainSessionServiceProvider"
 ```
 
-Register provider and facade on your config/app.php file.
+Register provider on your config/app.php file.
 
 ```php
 'providers' => [
@@ -20,8 +20,6 @@ Register provider and facade on your config/app.php file.
     Kolirt\CrossDomainSession\CrossDomainSessionServiceProvider::class,
 ]
 ```
-
-## Usage
 
 Configure domains in `config/cross-domain-session.php`.
 
@@ -43,4 +41,23 @@ Include view to your layout.
 
 ```
 @include('cross-domain-session::render')
+```
+
+## Method
+
+### Set
+```php
+cd_domain()->set($key, $value);
+```
+
+### Get
+```php
+cd_domain()->get(); // return all
+// or
+cd_domain()->get($key, $default);
+```
+
+### Push
+```php
+cd_domain()->push($key, $value);
 ```

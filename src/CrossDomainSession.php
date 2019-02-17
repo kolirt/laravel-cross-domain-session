@@ -43,7 +43,7 @@ class CrossDomainSession
         if (is_array($session[$key] ?? null)) {
             $session[$key][] = $value;
         } else {
-            $session[$key] = $value;
+            $session[$key] = [$value];
         }
 
         session()->put(config('cross-domain-session.key', 'cross-domain-session'), $session);
