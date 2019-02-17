@@ -4,6 +4,7 @@ namespace Kolirt\CrossDomainSession\app\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class CrossDomainSessionController extends Controller
 {
