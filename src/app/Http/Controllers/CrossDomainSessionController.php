@@ -11,7 +11,7 @@ class CrossDomainSessionController extends Controller
 
     public function index(Request $request)
     {
-        if (cd_session()->isValideDomain($request->server('HTTP_REFERER'))) {
+        if (cd_session()->isValideDomain(request()->root())) {
             $q = cd_session()->decode($request->get('q'));
             cd_session()->set($q);
         }
