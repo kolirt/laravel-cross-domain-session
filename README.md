@@ -1,3 +1,7 @@
+# This method for the sync session does not work in the new Google Chrome version
+
+
+
 # Laravel Cross-Domain Session
 
 The package will help to synchronize data between different domains.  
